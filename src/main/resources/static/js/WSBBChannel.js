@@ -1,7 +1,7 @@
 // Retorna la url del servicio. Es una función de configuración.
 function BBServiceURL() {
     var host = window.location.host;
-    var url = 'wss://' + (host) + '/bbService';
+    var url = 'wss://' + (host) + '/wbService';
     console.log("URL Calculada: " + url);
     return url;
 }
