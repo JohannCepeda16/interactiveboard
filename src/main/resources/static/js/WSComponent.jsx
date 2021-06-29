@@ -1,16 +1,17 @@
-import Channel from "./WSBBChannel";
-
 class Editor extends React.Component {
     render() {
         return (
             <div>
-                <h1>Test</h1>
                 <h1>Hello, {this.props.name}</h1>
                 <hr />
                 <div id="toolstatus"></div>
                 <hr />
                 <div id="container"></div>
-                <Canvas />
+                {
+                    /**
+                     <Canvas />
+                     */
+                }
                 <hr />
                 <div id="info"></div>
             </div>
@@ -18,7 +19,6 @@ class Editor extends React.Component {
     }
 }
 
-export default Editor;
 
 class Canvas extends React.Component {
     constructor(props) {
