@@ -18,17 +18,18 @@ class Editor extends React.Component {
     }
 }
 
+export default Editor;
+
 class Canvas extends React.Component {
     constructor(props) {
         super(props);
         this.comunicationWS = this.comunicationWS =
             new WSBBChannel(BBServiceURL(), new WSBBChannel(BBServiceURL(),
                 (msg) => {
-                    (msg) => {
-                        var obj = JSON.parse(msg); var obj = JSON.parse(msg);
-                        console.log("On func call back ", msg); console.log("On func call back ", msg);
-                        this.drawPoint(obj.x, obj.y); this.drawPoint(obj.x, obj.y);
-                    }
+                    var obj = JSON.parse(msg); var obj = JSON.parse(msg);
+                    console.log("On func call back ", msg); console.log("On func call back ", msg);
+                    this.drawPoint(obj.x, obj.y); this.drawPoint(obj.x, obj.y);
+
                 }));
         this.myp5 = null;
         this.state = { loadingState: 'Loading Canvas ...' }
@@ -63,7 +64,8 @@ class Canvas extends React.Component {
         return (
             <div>
                 <h4>Drawing status: {this.state.loadingState}</h4>
-            </div>);
+            </div>
+        );
     }
 }
 
@@ -107,8 +109,7 @@ class WSBBChannel {
     }
 }
 
-
 ReactDOM.render(
     <Editor name="Johann" />,
     document.getElementById("root")
-);
+)

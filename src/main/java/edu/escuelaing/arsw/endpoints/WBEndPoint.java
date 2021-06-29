@@ -53,6 +53,8 @@ public class WBEndPoint {
         } catch (IOException ex) {
             logger.log(Level.SEVERE, null, ex);
         }
+
+        System.out.println("Conexion establecida");
     }
 
     @OnClose
@@ -68,5 +70,6 @@ public class WBEndPoint {
         queue.remove(session);
         logger.log(Level.INFO, t.toString());
         logger.log(Level.INFO, "Connection error.");
+        System.out.println("Error en la conexion: " + t.getMessage());
     }
 }
